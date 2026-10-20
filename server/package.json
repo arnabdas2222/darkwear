@@ -1,0 +1,23 @@
+{
+  "name": "darkwear-server",
+  "version": "1.0.0",
+  "description": "REST API Backend for DarkWear Streetwear T-Shirt Store",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node seed.js"
+  },
+  "keywords": ["darkwear", "streetwear", "ecommerce", "express", "mongoose", "firebase"],
+  "author": "DarkWear",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.0.0",
+    "mongoose": "^8.3.1",
+    "morgan": "^1.10.0"
+  }
+}

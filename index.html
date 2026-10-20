@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DarkWear — Engineered Streetwear T-Shirt Store</title>
+  <meta name="description" content="Premium heavyweight, oversized, graphic, and minimal streetwear t-shirts engineered for modern culture.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2309090b'/><path d='M30 25H70L60 75H40L30 25Z' fill='%23ffffff'/></svg>">
+
+  <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. Header & Navigation Bar
+       ========================================================================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo">
+        <span>DARKWEAR</span>
+        <span class="brand-dot"></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="#shop" class="nav-link">Shop</a></li>
+          <li><a href="#categories" class="nav-link">Categories</a></li>
+          <li><a href="#specs" class="nav-link">About Us</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Search & Utility Actions -->
+      <div class="nav-actions">
+        
+        <!-- Live Search Input -->
+        <div style="position: relative; display: flex; align-items: center;">
+          <input
+            type="text"
+            id="nav-search-input"
+            placeholder="Search drops..."
+            style="background: #14141c; border: 1px solid rgba(255,255,255,0.1); border-radius: 9999px; padding: 0.45rem 0.85rem 0.45rem 2rem; color: #ffffff; font-size: 0.85rem; outline: none; width: 140px; transition: width 0.3s ease;"
+            onfocus="this.style.width='200px'"
+            onblur="if(!this.value) this.style.width='140px'"
+          />
+          <svg style="position: absolute; left: 8px; width: 14px; height: 14px; stroke: #71717a;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+
+        <!-- Sign Up Button -->
+        <button class="btn-signup-nav" onclick="openSignupModal()" title="Create Account">
+          Sign Up
+        </button>
+
+        <!-- User Profile Button -->
+        <button id="nav-user-btn" class="icon-btn" onclick="openAuthModal()" title="Sign In / Account">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+
+        <!-- Shopping Cart Bag Button -->
+        <button class="icon-btn" onclick="openCartDrawer()" title="Shopping Bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span id="cart-badge" class="cart-count-badge" style="display: none;">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="icon-btn mobile-menu-btn" title="Toggle Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav-drawer" style="display: none; flex-direction: column; background: #0e0e13; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1.25rem 1.5rem; gap: 0.85rem;">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#shop" class="nav-link">Shop Catalog</a>
+      <a href="#categories" class="nav-link">Categories</a>
+      <a href="#specs" class="nav-link">Fabric & GSM Specs</a>
+      <a href="#contact" class="nav-link">Customer Care</a>
+      <a href="#" class="nav-link" onclick="openSignupModal()">Sign Up</a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       2. Hero Section (Reference Design Layout + Wooden Clothes Rack)
+       ========================================================================== -->
+  <section class="hero-section">
+    <!-- Ambient Glow Orbs -->
+    <div class="hero-ambient-glow glow-top-left"></div>
+    <div class="hero-ambient-glow glow-bottom-right"></div>
+
+    <div class="container">
+      
+      <!-- Top Row: Headline + Description + Pill Button -->
+      <div class="hero-top-row">
+        <div class="hero-heading-box">
+          <div style="margin-bottom: 1rem;">
+            <span class="badge badge-outline">
+              <span style="color: var(--accent-lime); font-size: 0.9rem;">✦</span> NEW SEASON STREETWEAR
+            </span>
+          </div>
+          <h1 class="hero-headline">
+            Best T-Shirt for your summer
+          </h1>
+        </div>
+
+        <div class="hero-cta-box">
+          <p class="hero-description">
+            Explore the newest streetwear silhouettes each season and make every moment unforgettable with our heavy-GSM boxy t-shirt collection.
+          </p>
+
+          <!-- Pill "Shop Now ↗" Button (Exact reference style) -->
+          <a href="#shop" class="btn-pill-light">
+            <span>Shop Now</span>
+            <div class="icon-bubble">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Horizontal Clothes Rack (Inspired directly by user reference image) -->
+      <div class="hero-rack-container">
+        
+        <!-- Horizontal Rail -->
+        <div class="rack-horizontal-bar"></div>
+
+        <!-- Hanging T-Shirts on Wooden Hangers (User's Pure Garments, No Human Faces) -->
+        <div class="hanger-items-row">
+          
+          <!-- Tee 1: Sotto Zero -->
+          <div class="hanging-tee-item" onclick="openProductDetail('dw-01')">
+            <svg class="hanger-hook-svg" viewBox="0 0 100 70" fill="none">
+              <path d="M50 32C50 20 62 10 56 4C51 -1 44 2 45 10C45.5 14 47 18 50 24" stroke="#cfd3dc" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M10 60L50 30L90 60C78 64 22 64 10 60Z" fill="#a47148" stroke="#7a4e2d" stroke-width="2"/>
+            </svg>
+            <div class="hanging-tee-card">
+              <img src="images/tshirt-sotto-zero.jpg" alt="Sotto Zero Typography Tee" />
+              <div class="hanging-tee-tag">
+                <p class="hanging-tee-title">Sotto Zero</p>
+                <span class="hanging-tee-sub">280 GSM Boxy</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tee 2: Cafe Racer -->
+          <div class="hanging-tee-item" onclick="openProductDetail('dw-02')" style="transform: translateY(10px);">
+            <svg class="hanger-hook-svg" viewBox="0 0 100 70" fill="none">
+              <path d="M50 32C50 20 62 10 56 4C51 -1 44 2 45 10C45.5 14 47 18 50 24" stroke="#cfd3dc" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M10 60L50 30L90 60C78 64 22 64 10 60Z" fill="#a47148" stroke="#7a4e2d" stroke-width="2"/>
+            </svg>
+            <div class="hanging-tee-card">
+              <img src="images/tshirt-cafe-racer.jpg" alt="Cafe Racer Long Sleeve" />
+              <div class="hanging-tee-tag">
+                <p class="hanging-tee-title">Cafe Racer</p>
+                <span class="hanging-tee-sub">Vintage Long Sleeve</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tee 3: Blue Mockup -->
+          <div class="hanging-tee-item" onclick="openProductDetail('dw-03')">
+            <svg class="hanger-hook-svg" viewBox="0 0 100 70" fill="none">
+              <path d="M50 32C50 20 62 10 56 4C51 -1 44 2 45 10C45.5 14 47 18 50 24" stroke="#cfd3dc" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M10 60L50 30L90 60C78 64 22 64 10 60Z" fill="#a47148" stroke="#7a4e2d" stroke-width="2"/>
+            </svg>
+            <div class="hanging-tee-card">
+              <img src="images/tshirt-blue-mockup.jpg" alt="Royal Blue Statement Tee" />
+              <div class="hanging-tee-tag">
+                <p class="hanging-tee-title">Royal Blue</p>
+                <span class="hanging-tee-sub">Statement Tee</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tee 4: Artwork Arrow -->
+          <div class="hanging-tee-item" onclick="openProductDetail('dw-05')" style="transform: translateY(10px);">
+            <svg class="hanger-hook-svg" viewBox="0 0 100 70" fill="none">
+              <path d="M50 32C50 20 62 10 56 4C51 -1 44 2 45 10C45.5 14 47 18 50 24" stroke="#cfd3dc" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M10 60L50 30L90 60C78 64 22 64 10 60Z" fill="#a47148" stroke="#7a4e2d" stroke-width="2"/>
+            </svg>
+            <div class="hanging-tee-card">
+              <img src="images/tshirt-artwork-arrow.jpg" alt="Artwork Arrow Tee" />
+              <div class="hanging-tee-tag">
+                <p class="hanging-tee-title">Artwork Arrow</p>
+                <span class="hanging-tee-sub">Dark Minimal</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. Value Props Strip
+       ========================================================================== -->
+  <section style="background: #0e0e13; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 0;">
+    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.5rem;">
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
+        <span style="color: var(--accent-lime); font-size: 1.25rem;">✦</span>
+        <div>
+          <h4 style="font-size: 0.9rem; font-weight: 700;">260–300 GSM Heavyweight</h4>
+          <p style="font-size: 0.75rem; color: #8e909d;">Custom combed long-staple cotton</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
+        <span style="color: var(--accent-lime); font-size: 1.25rem;">✈</span>
+        <div>
+          <h4 style="font-size: 0.9rem; font-weight: 700;">Free Worldwide Shipping</h4>
+          <p style="font-size: 0.75rem; color: #8e909d;">Complimentary on all orders over $75</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
+        <span style="color: var(--accent-lime); font-size: 1.25rem;">🛡</span>
+        <div>
+          <h4 style="font-size: 0.9rem; font-weight: 700;">Anti-Deformation Collar</h4>
+          <p style="font-size: 0.75rem; color: #8e909d;">Zero baconing or loose neckline</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
+        <span style="color: var(--accent-lime); font-size: 1.25rem;">↺</span>
+        <div>
+          <h4 style="font-size: 0.9rem; font-weight: 700;">30-Day Easy Exchanges</h4>
+          <p style="font-size: 0.75rem; color: #8e909d;">Hassle-free size and fit replacement</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. Best Sellers Section (TeePublic-style)
+       ========================================================================== -->
+  <section id="best-sellers" class="tp-section">
+    <div class="container">
+      <div class="tp-section-header">
+        <div>
+          <span class="badge badge-amber">🔥 BEST SELLERS</span>
+          <h2 class="tp-section-title">Most Popular This Week</h2>
+          <p class="tp-section-subtitle">Our community's top picks — these tees are flying off the rack.</p>
+        </div>
+        <a href="#shop" class="btn btn-outline btn-sm" style="border-radius: var(--radius-full);">View All →</a>
+      </div>
+      <div id="best-sellers-grid" class="tp-scroll-row"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. Need to Find a Gift? Section (TeePublic-style)
+       ========================================================================== -->
+  <section class="tp-section tp-gift-section">
+    <div class="container">
+      <div class="tp-gift-banner">
+        <div class="tp-gift-content">
+          <span class="badge badge-lime">🎁 GIFT FINDER</span>
+          <h2 class="tp-gift-title">Need to Find a Gift?</h2>
+          <p class="tp-gift-desc">
+            Not sure what to get? Our curated streetwear bundles and gift cards make it easy. Pick a style, pick a size, and let them unwrap something iconic.
+          </p>
+          <div class="tp-gift-actions">
+            <a href="#shop" class="btn-pill-light">
+              <span>Browse Gift Ideas</span>
+              <div class="icon-bubble">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+            </a>
+            <a href="#shop" class="btn btn-outline" style="border-radius: var(--radius-full);">Gift Cards from $25</a>
+          </div>
+        </div>
+        <div class="tp-gift-cards">
+          <div class="tp-gift-card-item" onclick="openProductDetail('dw-01')">
+            <img src="images/tshirt-sotto-zero.jpg" alt="Sotto Zero Gift" />
+            <span>Best for minimalists</span>
+          </div>
+          <div class="tp-gift-card-item" onclick="openProductDetail('dw-03')">
+            <img src="images/tshirt-blue-mockup.jpg" alt="Royal Blue Gift" />
+            <span>Bold & colorful</span>
+          </div>
+          <div class="tp-gift-card-item" onclick="openProductDetail('dw-02')">
+            <img src="images/tshirt-cafe-racer.jpg" alt="Cafe Racer Gift" />
+            <span>For the vintage soul</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. Catalog Section & Category Filter (9 T-Shirts, 3-per-row)
+       ========================================================================== -->
+  <section id="shop" class="catalog-section">
+    <div class="container">
+      
+      <!-- Catalog Header with Categories -->
+      <div id="categories" class="catalog-header">
+        <div>
+          <span class="badge badge-amber" style="margin-bottom: 0.5rem;">CURATED STREETWEAR DROPS</span>
+          <h2 style="font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800;">Featured T-Shirt Archive</h2>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="category-filter-pills">
+          <button class="filter-pill active" data-category="all">All Drops</button>
+          <button class="filter-pill" data-category="oversized">Oversized</button>
+          <button class="filter-pill" data-category="graphic">Graphic</button>
+          <button class="filter-pill" data-category="minimal">Minimal</button>
+          <button class="filter-pill" data-category="basic">Heavyweight Basic</button>
+        </div>
+      </div>
+
+      <!-- Live Product Grid (Populated by app.js) -->
+      <div id="products-grid" class="product-grid"></div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. Artist Spotlight Section (TeePublic-style)
+       ========================================================================== -->
+  <section class="tp-section tp-artist-section">
+    <div class="container">
+      <div class="tp-section-header">
+        <div>
+          <span class="badge badge-lime">🎨 ARTIST SPOTLIGHT</span>
+          <h2 class="tp-section-title">Meet the Designers Behind the Drops</h2>
+          <p class="tp-section-subtitle">Independent artists and designers creating original streetwear artwork exclusively for DarkWear.</p>
+        </div>
+      </div>
+
+      <div class="tp-artist-grid">
+        <!-- Artist 1 -->
+        <div class="tp-artist-card">
+          <div class="tp-artist-avatar">
+            <span>RK</span>
+          </div>
+          <h4 class="tp-artist-name">Ren Kowalski</h4>
+          <p class="tp-artist-bio">Berlin-based typographer specializing in bold, architectural letterforms and brutalist streetwear aesthetics.</p>
+          <div class="tp-artist-works">
+            <img src="images/tshirt-sotto-zero.jpg" alt="Sotto Zero by Ren" onclick="openProductDetail('dw-01')" />
+            <img src="images/tshirt-artwork-arrow.jpg" alt="Artwork Arrow by Ren" onclick="openProductDetail('dw-05')" />
+          </div>
+          <span class="tp-artist-tag">12 Designs · 847 Sales</span>
+        </div>
+
+        <!-- Artist 2 -->
+        <div class="tp-artist-card">
+          <div class="tp-artist-avatar" style="background: rgba(59,130,246,0.15); color: #3b82f6;">
+            <span>JM</span>
+          </div>
+          <h4 class="tp-artist-name">Jordan Murakami</h4>
+          <p class="tp-artist-bio">Tokyo × LA graphic artist blending retro moto culture with modern streetwear design language.</p>
+          <div class="tp-artist-works">
+            <img src="images/tshirt-cafe-racer.jpg" alt="Cafe Racer by Jordan" onclick="openProductDetail('dw-02')" />
+            <img src="images/tshirt-design-repeat.jpg" alt="Design Repeat by Jordan" onclick="openProductDetail('dw-06')" />
+          </div>
+          <span class="tp-artist-tag">9 Designs · 623 Sales</span>
+        </div>
+
+        <!-- Artist 3 -->
+        <div class="tp-artist-card">
+          <div class="tp-artist-avatar" style="background: rgba(244,63,94,0.15); color: #f43f5e;">
+            <span>SV</span>
+          </div>
+          <h4 class="tp-artist-name">Sora Vieira</h4>
+          <p class="tp-artist-bio">São Paulo visual artist creating geometric color-block compositions and vibrant garment flat-lays.</p>
+          <div class="tp-artist-works">
+            <img src="images/tshirt-blue-mockup.jpg" alt="Blue Mockup by Sora" onclick="openProductDetail('dw-03')" />
+            <img src="images/tshirt-geometric-bauhaus.jpg" alt="Bauhaus by Sora" onclick="openProductDetail('dw-07')" />
+          </div>
+          <span class="tp-artist-tag">15 Designs · 1,204 Sales</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. Featured Products Section (TeePublic-style)
+       ========================================================================== -->
+  <section class="tp-section">
+    <div class="container">
+      <div class="tp-section-header">
+        <div>
+          <span class="badge badge-outline">⭐ FEATURED PRODUCTS</span>
+          <h2 class="tp-section-title">Editor's Picks</h2>
+          <p class="tp-section-subtitle">Hand-selected by our creative team. Premium quality, limited availability.</p>
+        </div>
+        <a href="#shop" class="btn btn-outline btn-sm" style="border-radius: var(--radius-full);">See More →</a>
+      </div>
+      <div id="featured-products-grid" class="tp-scroll-row"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. Editorial Highlight Banner (Zero Human Faces)
+       ========================================================================== -->
+  <section id="specs" class="editorial-section">
+    <div class="container">
+      <div class="editorial-grid">
+        
+        <!-- Left: Pure Garment Flat Lay -->
+        <div class="editorial-img-box">
+          <img src="images/tshirt-sotto-zero.jpg" alt="Sotto Zero Heavyweight T-Shirt" />
+          <div class="floating-spec-badge">
+            <p style="font-size: 0.75rem; color: #a1a1aa; font-weight: 600;">FABRIC ARCHITECTURE</p>
+            <p style="font-size: 1.25rem; font-weight: 800; color: #ffffff;">280 GSM Pure Combed</p>
+          </div>
+        </div>
+
+        <!-- Right: Technical Details -->
+        <div>
+          <span class="badge badge-lime" style="margin-bottom: 1rem;">CRAFTED FOR STREET CULTURE</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem;">
+            Heavyweight cotton with a structured drape.
+          </h2>
+          <p style="font-size: 1.05rem; color: #a1a1aa; line-height: 1.7; margin-bottom: 1.75rem;">
+            Every DarkWear garment is produced from custom combed ring-spun yarns, preshrunk with enzyme stonewash, and tailored with dropped shoulders to ensure the iconic relaxed boxy aesthetic.
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+            <div style="border-left: 2px solid var(--accent-lime); padding-left: 1rem;">
+              <h4 style="font-size: 1.5rem; font-weight: 800;">100%</h4>
+              <p style="font-size: 0.85rem; color: #8e909d;">Combed Organic Cotton</p>
+            </div>
+            <div style="border-left: 2px solid var(--accent-lime); padding-left: 1rem;">
+              <h4 style="font-size: 1.5rem; font-weight: 800;">Zero</h4>
+              <p style="font-size: 0.85rem; color: #8e909d;">Collar Bacon or Deformation</p>
+            </div>
+          </div>
+
+          <a href="#shop" class="btn btn-outline" style="border-radius: var(--radius-full);">Explore Collection</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. Trustpilot / Reviews Section (TeePublic-style)
+       ========================================================================== -->
+  <section class="tp-section tp-trustpilot-section">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 3rem;">
+        <div class="tp-trustpilot-stars">
+          <svg viewBox="0 0 24 24" fill="#00b67a" width="28" height="28"><path d="M12 .587l3.668 7.431L24 9.168l-6 5.848 1.416 8.253L12 19.269l-7.416 4-1.416-8.253-6-5.848 8.332-1.15z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#00b67a" width="28" height="28"><path d="M12 .587l3.668 7.431L24 9.168l-6 5.848 1.416 8.253L12 19.269l-7.416 4-1.416-8.253-6-5.848 8.332-1.15z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#00b67a" width="28" height="28"><path d="M12 .587l3.668 7.431L24 9.168l-6 5.848 1.416 8.253L12 19.269l-7.416 4-1.416-8.253-6-5.848 8.332-1.15z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#00b67a" width="28" height="28"><path d="M12 .587l3.668 7.431L24 9.168l-6 5.848 1.416 8.253L12 19.269l-7.416 4-1.416-8.253-6-5.848 8.332-1.15z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#00b67a" width="28" height="28"><path d="M12 .587l3.668 7.431L24 9.168l-6 5.848 1.416 8.253L12 19.269l-7.416 4-1.416-8.253-6-5.848 8.332-1.15z"/></svg>
+        </div>
+        <p style="font-size: 0.85rem; color: #a1a1aa; margin-top: 0.5rem;">
+          Rated <strong style="color: #00b67a;">4.9 out of 5</strong> on Trustpilot · 2,847 verified reviews
+        </p>
+        <h2 class="tp-section-title" style="margin-top: 0.75rem;">What Our Community Says</h2>
+      </div>
+
+      <div class="tp-trustpilot-grid">
+        <!-- Review 1 -->
+        <div class="tp-review-card">
+          <div class="tp-review-stars">★★★★★</div>
+          <p class="tp-review-text">"The GSM density on the Sotto Zero tee is immaculate. The boxy drape sits naturally without clinging. Best streetwear purchase I've made."</p>
+          <div class="tp-review-author">
+            <div class="tp-review-avatar">MV</div>
+            <div>
+              <strong>Marcus Vance</strong>
+              <span>Industrial Designer, Berlin</span>
+            </div>
+          </div>
+          <span class="tp-review-verified">✓ Verified Purchase</span>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="tp-review-card">
+          <div class="tp-review-stars">★★★★★</div>
+          <p class="tp-review-text">"Ordered the Cafe Racer long sleeve and the Royal Blue tee. Both arrived in premium packaging. Print quality is insane — no cracking after 20+ washes."</p>
+          <div class="tp-review-author">
+            <div class="tp-review-avatar" style="background: rgba(59,130,246,0.15); color: #3b82f6;">ST</div>
+            <div>
+              <strong>Sora Tanaka</strong>
+              <span>Visual Artist, Tokyo</span>
+            </div>
+          </div>
+          <span class="tp-review-verified">✓ Verified Purchase</span>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="tp-review-card">
+          <div class="tp-review-stars">★★★★★</div>
+          <p class="tp-review-text">"No annoying loud brand logos, just premium heavyweight fabric and tight neckline ribbing that never deforms. DarkWear is now my go-to."</p>
+          <div class="tp-review-author">
+            <div class="tp-review-avatar" style="background: rgba(244,63,94,0.15); color: #f43f5e;">DM</div>
+            <div>
+              <strong>Devon Miller</strong>
+              <span>Creative Director, NYC</span>
+            </div>
+          </div>
+          <span class="tp-review-verified">✓ Verified Purchase</span>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="tp-review-card">
+          <div class="tp-review-stars">★★★★★</div>
+          <p class="tp-review-text">"Bought the Awesome Today tee as a gift — the recipient was blown away. The fabric weight is noticeably premium compared to mall brands."</p>
+          <div class="tp-review-author">
+            <div class="tp-review-avatar" style="background: rgba(245,158,11,0.15); color: #f59e0b;">AK</div>
+            <div>
+              <strong>Amara Kone</strong>
+              <span>UI Designer, Paris</span>
+            </div>
+          </div>
+          <span class="tp-review-verified">✓ Verified Purchase</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. Footer with Newsletter & Social Icons
+       ========================================================================== -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      
+      <!-- Newsletter Banner -->
+      <div class="footer-newsletter-banner">
+        <div style="max-width: 480px;">
+          <span class="badge badge-lime" style="margin-bottom: 0.75rem;">EXCLUSIVE DROP PASS</span>
+          <h3 style="font-size: 1.65rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">
+            Unlock 15% off your next drop.
+          </h3>
+          <p style="font-size: 0.925rem; color: #a1a1aa;">
+            Join the underground dispatch for limited restocks and member discounts. Use code <strong>DARK15</strong>.
+          </p>
+        </div>
+
+        <form onsubmit="handleNewsletter(event)" style="display: flex; gap: 0.5rem; flex: 1 1 320px; max-width: 420px;">
+          <input
+            type="email"
+            id="newsletter-email"
+            required
+            placeholder="Enter your email address"
+            style="flex: 1; background: #09090b; border: 1px solid rgba(255,255,255,0.12); border-radius: 9999px; padding: 0.75rem 1.25rem; color: #ffffff; font-size: 0.9rem; outline: none;"
+          />
+          <button type="submit" class="btn btn-pill-light" style="padding: 0.55rem 0.65rem 0.55rem 1.15rem;">
+            <span>Join</span>
+            <div class="icon-bubble">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </button>
+        </form>
+      </div>
+
+      <!-- Footer Navigation Grid -->
+      <div class="footer-grid">
+        
+        <!-- Brand Info & Social Icons -->
+        <div style="grid-column: span 2;">
+          <a href="#" class="brand-logo" style="margin-bottom: 1.25rem; display: inline-flex;">
+            <span>DARKWEAR</span>
+            <span class="brand-dot"></span>
+          </a>
+          <p style="font-size: 0.9rem; color: #8e909d; line-height: 1.6; max-width: 340px;">
+            Architectural streetwear t-shirts constructed from heavy 260–300 GSM combed cotton. Designed for timeless street culture.
+          </p>
+
+          <!-- Social Links including FACEBOOK ICON -->
+          <div class="footer-social-row">
+            
+            <!-- Facebook Icon -->
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-circle-btn" title="Follow DarkWear on Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+
+            <!-- Instagram Icon -->
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-circle-btn" title="Follow on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+
+            <!-- Twitter / X Icon -->
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-circle-btn" title="Follow on Twitter/X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+
+            <!-- Discord Icon -->
+            <a href="https://discord.com" target="_blank" rel="noopener" class="social-circle-btn" title="Join Discord Community">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Column: Categories -->
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: #ffffff; margin-bottom: 1.25rem;">Collection</h4>
+          <ul class="footer-links-list">
+            <li><a href="#shop" onclick="filterCategory('all')">All Streetwear Drops</a></li>
+            <li><a href="#shop" onclick="filterCategory('oversized')">Oversized Boxy</a></li>
+            <li><a href="#shop" onclick="filterCategory('graphic')">Graphic & Typographic</a></li>
+            <li><a href="#shop" onclick="filterCategory('minimal')">Minimal Blanks</a></li>
+            <li><a href="#shop" onclick="filterCategory('basic')">Heavyweight Basics</a></li>
+          </ul>
+        </div>
+
+        <!-- Column: Customer Care -->
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: #ffffff; margin-bottom: 1.25rem;">Customer Care</h4>
+          <ul class="footer-links-list">
+            <li><a href="#specs">Fabric & GSM Guide</a></li>
+            <li><a href="#" onclick="openCartDrawer()">Shopping Bag</a></li>
+            <li><a href="#" onclick="openSignupModal()">Create Account</a></li>
+            <li><a href="#" onclick="openAuthModal()">Member Portal</a></li>
+            <li><a href="mailto:support@darkwear.com">support@darkwear.com</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Legal Row -->
+      <div class="footer-bottom-row">
+        <div>© 2026 DARKWEAR Streetwear Apparel Inc. All rights reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       12. Slide-Over Shopping Cart Drawer
+       ========================================================================== -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay" onclick="if(event.target === this) closeCartDrawer()">
+    <div class="cart-drawer">
+      
+      <!-- Drawer Header -->
+      <div class="drawer-header">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <h2 style="font-size: 1.2rem; font-weight: 700; color: #ffffff;">Your Shopping Bag</h2>
+          <span id="drawer-item-count" class="badge badge-outline">0 items</span>
+        </div>
+        <button onclick="closeCartDrawer()" style="background: none; border: none; color: #a1a1aa; cursor: pointer; font-size: 1.2rem;">✕</button>
+      </div>
+
+      <!-- Free Shipping Tracker -->
+      <div style="padding: 0.85rem 1.5rem; background: #16161e; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.8rem; color: #a1a1aa;">
+        <span>Free standard shipping applies on all orders over <strong>$75.00</strong></span>
+      </div>
+
+      <!-- Cart Items List Container -->
+      <div id="drawer-items-list" class="drawer-items-list"></div>
+
+      <!-- Drawer Footer with Pricing & Checkout -->
+      <div class="drawer-footer">
+        
+        <!-- Promo Code Input Form -->
+        <form onsubmit="applyPromo(event)" style="display: flex; gap: 0.5rem;">
+          <input
+            type="text"
+            id="promo-input"
+            placeholder="Promo code (e.g. DARK15)"
+            style="flex: 1; background: #09090c; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.45rem 0.75rem; color: #ffffff; font-size: 0.85rem; outline: none;"
+          />
+          <button type="submit" class="btn btn-outline btn-sm">Apply</button>
+        </form>
+
+        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #a1a1aa;">
+          <span>Subtotal</span>
+          <span id="drawer-subtotal" style="color: #ffffff; font-weight: 600;">$0.00</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #a1a1aa;">
+          <span>Shipping</span>
+          <span id="drawer-shipping" style="color: #ffffff; font-weight: 600;">FREE</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 800; color: #ffffff; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.08);">
+          <span>Total</span>
+          <span id="drawer-total">$0.00</span>
+        </div>
+
+        <button onclick="openCheckoutModal()" class="btn btn-pill-light" style="width: 100%; justify-content: space-between; padding: 0.75rem 1rem 0.75rem 1.5rem;">
+          <span>Proceed to Checkout</span>
+          <div class="icon-bubble">→</div>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       13. Full Product Detail Page View (Image, Name, Price, Description, Size, Quantity)
+       ========================================================================== -->
+  <div id="product-detail-page-view" class="product-detail-page-view">
+    <div class="pdp-container">
+      
+      <!-- Back / Navigation Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <button onclick="closeProductDetail()" class="btn btn-outline btn-sm" style="border-radius: var(--radius-full); display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.1rem;">←</span> Back to 9 T-Shirts Grid
+        </button>
+        <span class="badge badge-outline">STREETWEAR ARCHIVE 2026</span>
+      </div>
+
+      <!-- Main PDP Layout Grid -->
+      <div class="pdp-grid">
+        
+        <!-- Left: Large High-Res Product Image -->
+        <div class="pdp-image-wrapper">
+          <img id="pdp-img" src="" alt="Streetwear T-Shirt Product Detail" />
+        </div>
+
+        <!-- Right: Complete Product Information -->
+        <div class="pdp-info-wrapper">
+          <span class="badge badge-lime" style="width: fit-content; margin-bottom: 0.75rem;">AUTHENTIC STREETWEAR</span>
+          
+          <h1 id="pdp-name" style="font-size: clamp(2rem, 3.5vw, 2.6rem); font-weight: 800; color: #ffffff; line-height: 1.2; margin-bottom: 0.75rem;"></h1>
+          
+          <div style="display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.75rem;">
+            <span id="pdp-price" style="font-size: 2.2rem; font-weight: 800; color: #ffffff;"></span>
+            <span style="font-size: 0.85rem; color: var(--accent-lime); font-weight: 600;">✓ In Stock • Free Worldwide Shipping</span>
+          </div>
+
+          <!-- Product Description -->
+          <div style="margin-bottom: 2rem; padding-bottom: 1.75rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <h4 style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: #8e909d; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Garment Description</h4>
+            <p id="pdp-desc" style="font-size: 1.05rem; color: #d4d4d8; line-height: 1.7;"></p>
+          </div>
+
+          <!-- Available Sizes Selector -->
+          <div style="margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+              <span style="font-size: 0.9rem; font-weight: 700; color: #ffffff;">Select Size:</span>
+              <span style="font-size: 0.8rem; color: #8e909d;">True to oversized boxy fit</span>
+            </div>
+            <div id="pdp-sizes-container" class="pdp-sizes-row"></div>
+          </div>
+
+          <!-- Quantity Selector and Add to Cart -->
+          <div style="display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; margin-bottom: 2.5rem;">
+            <div class="pdp-qty-control">
+              <button type="button" class="pdp-qty-btn" onclick="changePdpQty(-1)">−</button>
+              <input type="text" id="pdp-qty-input" value="1" readonly class="pdp-qty-input" />
+              <button type="button" class="pdp-qty-btn" onclick="changePdpQty(1)">+</button>
+            </div>
+
+            <button type="button" class="btn btn-pill-light" onclick="addCurrentProductToCart()" style="flex: 1; min-width: 200px; justify-content: space-between; padding: 0.85rem 1.25rem 0.85rem 1.75rem;">
+              <span>Add to Shopping Bag</span>
+              <div class="icon-bubble">→</div>
+            </button>
+          </div>
+
+          <!-- Fabric and Specifications Box -->
+          <div style="background: #14141c; border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: 1.5rem;">
+            <h4 style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: #ffffff; margin-bottom: 1rem; letter-spacing: 0.05em;">Architectural Specifications</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem;">
+              <div>
+                <span style="color: #71717a; display: block;">Fabric Density</span>
+                <strong id="pdp-fabric" style="color: #ffffff;"></strong>
+              </div>
+              <div>
+                <span style="color: #71717a; display: block;">Cut & Silhouette</span>
+                <strong id="pdp-fit" style="color: #ffffff;"></strong>
+              </div>
+              <div style="grid-column: span 2;">
+                <span style="color: #71717a; display: block;">Care Instructions</span>
+                <strong id="pdp-care" style="color: #ffffff;"></strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       14. Checkout Modal (Simulated Payment Sandbox)
+       ========================================================================== -->
+  <div id="checkout-modal" class="modal-overlay" onclick="if(event.target === this) closeCheckoutModal()">
+    <div class="modal-box">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()">✕</button>
+
+      <span class="badge badge-amber" style="margin-bottom: 0.5rem;">SIMULATED SANDBOX CHECKOUT</span>
+      <h2 style="font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-bottom: 1.5rem;">Complete Your Order</h2>
+
+      <div id="checkout-items-summary" style="display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem; background: #0d0d12; border-radius: 8px; margin-bottom: 1.5rem;"></div>
+
+      <form onsubmit="handleCheckoutSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" id="checkout-name" required value="Alex Rivers" class="form-input" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email for Tracking Receipt</label>
+          <input type="email" required value="shopper@darkwear.com" class="form-input" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Delivery Street Address</label>
+          <input type="text" required value="742 Evergreen Terrace, Apt 4B" class="form-input" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">City</label>
+            <input type="text" required value="Brooklyn" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Postal / ZIP Code</label>
+            <input type="text" required value="11201" class="form-input" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Payment Mode</label>
+          <select class="form-input">
+            <option>Demo Credit Card (Instant Simulated Approval)</option>
+            <option>Cash on Delivery / Drop Handoff</option>
+          </select>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin: 1.5rem 0 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+          <span style="font-size: 1.1rem; font-weight: 700;">Total Charged:</span>
+          <span id="checkout-final-total" style="font-size: 1.4rem; font-weight: 800; color: var(--accent-lime);">$0.00</span>
+        </div>
+
+        <button type="submit" class="btn btn-pill-light" style="width: 100%; justify-content: center; padding: 0.85rem;">
+          Place Streetwear Order
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       15. Order Confirmation Modal
+       ========================================================================== -->
+  <div id="confirm-modal" class="modal-overlay" onclick="if(event.target === this) closeConfirmModal()">
+    <div class="modal-box" style="text-align: center; max-width: 460px;">
+      <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(16,185,129,0.15); border: 2px solid var(--accent-emerald); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; font-size: 1.8rem; color: var(--accent-emerald);">
+        ✓
+      </div>
+      <span class="badge badge-lime" style="margin-bottom: 0.5rem;">ORDER CONFIRMED</span>
+      <h2 style="font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Thank you, <span id="confirm-cust-name"></span>!</h2>
+      <p style="font-size: 0.9rem; color: #a1a1aa; margin-bottom: 1.5rem;">Your streetwear drop has been recorded in our fulfillment queue.</p>
+      
+      <div style="background: #09090c; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.85rem; margin-bottom: 1.5rem;">
+        <span style="font-size: 0.8rem; color: #71717a;">Order Tracking ID:</span>
+        <strong id="confirm-order-num" style="display: block; font-size: 1.2rem; color: #ffffff; letter-spacing: 0.05em; margin-top: 2px;">DW-99412</strong>
+      </div>
+
+      <button class="btn btn-pill-light" onclick="closeConfirmModal()">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       16. Authentication / Sign In Modal
+       ========================================================================== -->
+  <div id="auth-modal" class="modal-overlay" onclick="if(event.target === this) closeAuthModal()">
+    <div class="modal-box" style="max-width: 420px; text-align: center;">
+      <button class="modal-close-btn" onclick="closeAuthModal()">✕</button>
+
+      <span class="badge badge-outline" style="margin-bottom: 0.5rem;">DARKWEAR PORTAL</span>
+      <h2 style="font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Welcome Back</h2>
+      <p style="font-size: 0.85rem; color: #8e909d; margin-bottom: 1.5rem;">Sign in to access past streetwear orders and early drops.</p>
+
+      <!-- 1-Click Instant Demo Login -->
+      <div style="background: rgba(255,255,255,0.03); border: 1px dashed rgba(255,255,255,0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem;">
+        <p style="font-size: 0.75rem; font-weight: 700; color: var(--accent-lime); margin-bottom: 0.75rem;">QUICK 1-CLICK DEMO LOGIN</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+          <button class="btn btn-outline btn-sm" onclick="handleDemoLogin('customer')">Shopper Demo</button>
+          <button class="btn btn-outline btn-sm" onclick="handleDemoLogin('admin')" style="color: var(--accent-lime); border-color: rgba(190,242,100,0.3);">Admin Demo 🛡</button>
+        </div>
+      </div>
+
+      <!-- Standard Sign In Form -->
+      <form onsubmit="event.preventDefault(); handleDemoLogin('customer');">
+        <div class="form-group" style="text-align: left;">
+          <label class="form-label">Email</label>
+          <input type="email" required placeholder="shopper@darkwear.com" class="form-input" />
+        </div>
+        <div class="form-group" style="text-align: left;">
+          <label class="form-label">Password</label>
+          <input type="password" required placeholder="••••••••" class="form-input" />
+        </div>
+        <button type="submit" class="btn btn-pill-light" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+          Sign In
+        </button>
+        <p style="font-size: 0.8rem; color: #71717a; margin-top: 1rem;">
+          Don't have an account? <a href="#" onclick="event.preventDefault(); closeAuthModal(); openSignupModal();" style="color: var(--accent-lime); font-weight: 600;">Sign Up →</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       17. Sign Up Modal (NEW)
+       ========================================================================== -->
+  <div id="signup-modal" class="modal-overlay" onclick="if(event.target === this) closeSignupModal()">
+    <div class="modal-box" style="max-width: 440px;">
+      <button class="modal-close-btn" onclick="closeSignupModal()">✕</button>
+
+      <span class="badge badge-lime" style="margin-bottom: 0.5rem;">JOIN DARKWEAR</span>
+      <h2 style="font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem; text-align: center;">Create Your Account</h2>
+      <p style="font-size: 0.85rem; color: #8e909d; margin-bottom: 1.5rem; text-align: center;">Sign up for exclusive drops, order tracking, and 15% off your first purchase.</p>
+
+      <form id="signup-form" onsubmit="handleSignup(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" id="signup-name" required placeholder="Alex Rivers" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" id="signup-email" required placeholder="alex@example.com" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" id="signup-password" required placeholder="Minimum 8 characters" minlength="8" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Confirm Password</label>
+          <input type="password" id="signup-confirm" required placeholder="Re-enter your password" minlength="8" class="form-input" />
+        </div>
+
+        <div id="signup-error" style="display: none; background: rgba(244,63,94,0.1); border: 1px solid rgba(244,63,94,0.3); border-radius: 8px; padding: 0.65rem 1rem; margin-bottom: 1rem; font-size: 0.85rem; color: #f43f5e;"></div>
+
+        <button type="submit" class="btn btn-pill-light" style="width: 100%; justify-content: center; padding: 0.85rem; margin-top: 0.5rem;">
+          Create Account
+        </button>
+
+        <!-- Google Sign-In Placeholder -->
+        <div style="position: relative; text-align: center; margin: 1.25rem 0;">
+          <div style="height: 1px; background: rgba(255,255,255,0.08);"></div>
+          <span style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #14141c; padding: 0 1rem; font-size: 0.78rem; color: #71717a;">OR</span>
+        </div>
+
+        <button type="button" class="btn btn-outline" style="width: 100%; border-radius: var(--radius-full); gap: 0.75rem;" onclick="handleDemoLogin('customer'); closeSignupModal();">
+          <svg width="18" height="18" viewBox="0 0 24 24">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          Continue with Google
+        </button>
+
+        <p style="font-size: 0.8rem; color: #71717a; margin-top: 1rem; text-align: center;">
+          Already have an account? <a href="#" onclick="event.preventDefault(); closeSignupModal(); openAuthModal();" style="color: var(--accent-lime); font-weight: 600;">Sign In →</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-msg">
+    <span style="color: var(--accent-lime);">✓</span>
+    <span id="toast-text"></span>
+  </div>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>

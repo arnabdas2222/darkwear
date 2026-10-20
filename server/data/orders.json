@@ -1,0 +1,87 @@
+[
+  {
+    "_id": "ord_1792211705731",
+    "orderNumber": "DW-42997",
+    "isPaid": true,
+    "paidAt": "2026-10-17T04:35:05.729Z",
+    "orderStatus": "Shipped",
+    "user": {
+      "firebaseUid": "demo-customer-uid-200",
+      "email": "shopper@darkwear.com",
+      "displayName": "Alex Rivers"
+    },
+    "items": [
+      {
+        "productId": "prod_1",
+        "name": "Obsidian Acid-Wash Heavy Tee",
+        "image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518",
+        "price": 48,
+        "size": "L",
+        "color": "Acid Obsidian",
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "fullName": "Test Shopper",
+      "address": "123 Streetwear Ave",
+      "city": "New York",
+      "postalCode": "10001",
+      "country": "United States",
+      "phone": "+1 555-0100"
+    },
+    "paymentMethod": "Demo Credit Card (Simulated)",
+    "itemsPrice": 48,
+    "shippingPrice": 0,
+    "taxPrice": 3.84,
+    "totalPrice": 51.84,
+    "createdAt": "2026-10-17T04:35:05.731Z",
+    "updatedAt": "2026-10-17T04:35:56.501Z"
+  },
+  {
+    "_id": "ord_1001",
+    "orderNumber": "DW-88219",
+    "user": {
+      "firebaseUid": "demo-customer-uid-200",
+      "email": "shopper@darkwear.com",
+      "displayName": "Alex Rivers"
+    },
+    "items": [
+      {
+        "productId": "prod_1",
+        "name": "Obsidian Acid-Wash Heavy Tee",
+        "image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=80",
+        "price": 48,
+        "size": "L",
+        "color": "Acid Obsidian",
+        "quantity": 1
+      },
+      {
+        "productId": "prod_3",
+        "name": "Raw Minimalist Charcoal Blank",
+        "image": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=1000&q=80",
+        "price": 38,
+        "size": "M",
+        "color": "Dark Charcoal",
+        "quantity": 2
+      }
+    ],
+    "shippingAddress": {
+      "fullName": "Alex Rivers",
+      "address": "742 Evergreen Terrace",
+      "city": "Brooklyn",
+      "postalCode": "11201",
+      "country": "United States",
+      "phone": "+1 (555) 234-5678"
+    },
+    "paymentMethod": "Demo Credit Card (Simulated)",
+    "itemsPrice": 124,
+    "shippingPrice": 0,
+    "taxPrice": 9.92,
+    "totalPrice": 133.92,
+    "isPaid": true,
+    "paidAt": "2026-10-15T04:22:31.934Z",
+    "orderStatus": "Shipped",
+    "createdAt": "2026-10-15T04:22:31.934Z",
+    "updatedAt": "2026-10-16T04:22:31.934Z"
+  }
+]

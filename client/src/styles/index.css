@@ -1,0 +1,481 @@
+/* DarkWear Streetwear Aesthetic Stylesheet */
+
+:root {
+  --bg-primary: #09090b;
+  --bg-secondary: #111116;
+  --bg-card: #15151c;
+  --bg-surface: #1a1a23;
+  --bg-input: #121217;
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.22);
+  --border-active: #ffffff;
+  
+  --text-primary: #f5f5f7;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  
+  --accent-white: #ffffff;
+  --accent-dark: #000000;
+  --accent-glow: rgba(255, 255, 255, 0.06);
+  --accent-lime: #bef264;
+  --accent-amber: #f59e0b;
+  --accent-emerald: #10b981;
+  --accent-rose: #f43f5e;
+  
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.45);
+  --shadow-elevated: 0 10px 40px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 35px rgba(255, 255, 255, 0.05);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #272733;
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f50;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Grid Utilities */
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.gap-8 { gap: 2rem; }
+.gap-10 { gap: 2.5rem; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.925rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* White Pill Button inspired by reference design */
+.btn-pill-light {
+  background-color: #ffffff;
+  color: #09090b;
+  border-radius: var(--radius-full);
+  padding: 0.55rem 0.65rem 0.55rem 1.35rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
+
+.btn-pill-light:hover {
+  background-color: #f0f0f2;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-pill-light .icon-bubble {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #09090b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.btn-pill-light:hover .icon-bubble {
+  transform: rotate(45deg);
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: #09090b;
+}
+
+.btn-primary:hover {
+  background-color: #eaeaea;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+.btn-outline:hover {
+  border-color: var(--border-hover);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.btn-dark {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.btn-dark:hover {
+  background-color: #242430;
+  border-color: var(--border-hover);
+}
+
+.btn-sm {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.825rem;
+}
+
+.btn-lg {
+  padding: 0.95rem 2rem;
+  font-size: 1.05rem;
+}
+
+/* Glassmorphism Surface */
+.glass-panel {
+  background: rgba(21, 21, 28, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+}
+
+/* Streetwear Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-outline {
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.badge-lime {
+  background: rgba(190, 242, 100, 0.15);
+  color: #bef264;
+  border: 1px solid rgba(190, 242, 100, 0.3);
+}
+
+.badge-amber {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Input Fields */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.input-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input-control:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+  background-color: #171720;
+}
+
+.input-control::placeholder {
+  color: var(--text-muted);
+}
+
+/* Product Card */
+.product-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.product-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-elevated), var(--shadow-glow);
+}
+
+.product-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  background: #111115;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.06);
+}
+
+.product-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Clothes Rack Hero Showcase inspired by Reference Image */
+.hero-rack-container {
+  position: relative;
+  width: 100%;
+  padding: 2.5rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rack-horizontal-bar {
+  width: 90%;
+  height: 10px;
+  background: linear-gradient(90deg, #1c1c24 0%, #3a3b48 50%, #1c1c24 100%);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(255, 255, 255, 0.1) inset;
+  position: relative;
+  z-index: 10;
+}
+
+.rack-horizontal-bar::before,
+.rack-horizontal-bar::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #272733;
+  border: 2px solid #4a4b59;
+}
+.rack-horizontal-bar::before { left: -6px; }
+.rack-horizontal-bar::after { right: -6px; }
+
+.hanger-items-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: -6px;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+.hanging-tee-item {
+  flex: 1;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.hanging-tee-item:hover {
+  transform: translateY(6px);
+}
+
+.hanger-hook-svg {
+  width: 48px;
+  height: 38px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.hanging-tee-card {
+  width: 100%;
+  aspect-ratio: 1 / 1.3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #131318;
+  position: relative;
+}
+
+.hanging-tee-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ambient glow orb for background */
+.ambient-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.18;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .hanger-items-row {
+    gap: 0.75rem;
+  }
+  .hanging-tee-item:nth-child(4) {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "darkwear-root",
+  "version": "1.0.0",
+  "description": "DarkWear — Premium Streetwear T-Shirt E-Commerce Store",
+  "private": true,
+  "scripts": {
+    "server": "cd server && npm start",
+    "server:dev": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "client:build": "cd client && npm run build",
+    "seed": "cd server && npm run seed"
+  },
+  "keywords": [
+    "darkwear",
+    "streetwear",
+    "ecommerce",
+    "react",
+    "nodejs",
+    "express",
+    "mongodb",
+    "firebase"
+  ],
+  "author": "DarkWear",
+  "license": "MIT"
+}
